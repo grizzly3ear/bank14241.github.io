@@ -3,6 +3,7 @@ let playlist = [];
 function playAudio(task){
     if (task == 'play') {
         let x = $('#audioInput').val();
+        playlist = [];
         for (var index = 0; index < x.length; index++) {
             if (x.charAt(index) != ' ') {
                 playlist.push(x.charAt(index));
