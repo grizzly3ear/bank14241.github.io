@@ -1,17 +1,5 @@
 let playlist = [];
-function playMultiAudio(){
-    let x = document.getElementById('audioInput').value;
-    for (var index = 0; index < x.length; index++) {
-        if (x.charAt(index)!=' ') {
-            playlist.push(x.charAt(index));
-        }        
-    }
-    for (var index = 0; index < playlist.length; index++) {
-        var audio = new Audio(document.getElementById('audio'+index).src);
-        audio.play();
-    }
-    playlist = [];
-}
+
 function playAudio(task){
     if (task == 'play') {
         let x = $('#audioInput').val();
@@ -29,4 +17,20 @@ function playAudio(task){
         }
         playlist = [];
     }
+}
+
+function stopCustom(){
+    let x = $('#audioStopInput').val();
+    for (var index = 0; index < x.length; index++) {
+        if (x.charAt(index) != ' ') {
+            $('.audio'+x.charAt(index)).trigger('pause');
+        }        
+    }
+}
+
+function fadeOut(id){
+    $('.audio'+id).animate({volume: 0}, 1000);
+    setTimeout(function(){
+        $('.audio'+id).trigger('pause');
+    }, 1000);
 }

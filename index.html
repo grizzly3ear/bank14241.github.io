@@ -1,27 +1,56 @@
 <html>
-    <head>
-        <title>
-            GEN 241 AUDIO FILE
-        </title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/script.js"></script>
-    </head>
-    <body>
-        <h2>GEN 241</h2>
-        <p>ฟ้าร้อง 0</p>
-        <audio controls class="audio0">
-            <source src="audio/1.mp3" type="audio/mpeg">
-        </audio>
-        <br>
-        <p>shock 1</p>
-        <audio controls class="audio1">
-            <source src="audio/2.mp3" type="audio/mpeg">
-        </audio>
-        <br>
-        <input type="text" placeholder="1 2 3 ..." id="audioInput">
-        <button onclick="playAudio('play')">Play!</button>
-        <button onclick="playAudio('stop')">STOP ALL!</button>
-    </body>
+
+<head>
+    <title>
+        GEN 241 AUDIO FILE
+    </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body class="container-fluid">
+    <h2 class="text-center">GEN 241</h2>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-4">
+            <input type="text" placeholder="1 2 3 ..." id="audioInput">
+            <button class="btn btn-default" onclick="playAudio('play')">Play!</button>
+            <button class="btn btn-danger" onclick="playAudio('stop')">STOP ALL!</button>
+        </div>
+        <div class="col-md-6">
+            <input type="text" placeholder="1 2 3 ..." id="audioStopInput">
+            <button class="btn btn-danger" onclick="stopCustom()">STOP!</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-1">
+            <span>ฟ้าร้อง 0</span>
+        </div>
+        <div class="col-md-3">
+            <audio controls class="audio0">
+                <source src="audio/1.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-warning" onclick="fadeOut('0')">fade out</button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-1">
+            <span>shock 1</span>
+        </div>
+        <div class="col-md-3">
+            <audio controls class="audio1">
+                <source src="audio/2.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-warning" onclick="fadeOut('1')">fade out</button>
+        </div>
+    </div>
+
+</body>
+
 </html>
