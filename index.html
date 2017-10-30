@@ -10,13 +10,18 @@
     </head>
     <body>
         <h2>GEN 241</h2>
-        <audio controls>
-            <source src="audio/1.mp3" type="audio/mpeg" id="audio0">
+        <p>ฟ้าร้อง 0</p>
+        <audio controls class="audio0">
+            <source src="audio/1.mp3" type="audio/mpeg">
         </audio>
-        <audio controls>
-            <source src="audio/2.mp3" type="audio/mpeg" id="audio1">
+        <br>
+        <p>shock 1</p>
+        <audio controls class="audio1">
+            <source src="audio/2.mp3" type="audio/mpeg">
         </audio>
+        <br>
         <input type="text" placeholder="1 2 3 ..." id="audioInput">
-        <button onclick="playMultiAudio()">Play!</button>
+        <button onclick="playAudio('play')">Play!</button>
+        <button onclick="playAudio('stop')">STOP ALL!</button>
     </body>
 </html>
