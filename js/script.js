@@ -18,14 +18,6 @@ $(document).ready(function () {
     
 });
 
-$(document).ready(function(){
-    $('#audioInput').keydown(function(e){
-        if(e.keyCode || e.which == 13){
-            playAudio('play');
-       }
-    })
-});
-
 
 function playAudio(task) {
     if (task == 'play') {
