@@ -15,7 +15,16 @@ $(document).ready(function () {
                                 '</div>'+
                                 '<br>');
     }
-})
+    
+});
+
+$(document).ready(function(){
+    $('#audioInput').keydown(function(e){
+        if(e.keyCode || e.which == 13){
+            playAudio('play');
+       }
+    })
+});
 
 
 function playAudio(task) {
@@ -25,12 +34,12 @@ function playAudio(task) {
         for (var index = 0; index < playlist.length; index++) {
             $('#audio' + playlist[index]).trigger('play');
         }
-    } else if (task == 'stop') {
-        for (var index = 0; index < playlist.length; index++) {
-            $('#audio' + playlist[index]).trigger('pause');
-            $('#audio' + playlist[index]).prop('currentTime', 0);
-        }
         playlist = [];
+    } else if (task == 'stopAll') {
+        for (var index = 0; index < list.length; index++) {
+            $('#audio' + (index+1)).trigger('pause');
+            $('#audio' + (index+1)).prop('currentTime', 0);
+        }
     }
 }
 
@@ -45,8 +54,8 @@ function stopCustom() {
 }
 
 function fadeOut(id) {
-    $('#audio' + id).animate({ volume: 0 }, 1000);
+    $('#audio' + id).animate({ volume: 0 }, 2000);
     setTimeout(function () {
         $('#audio' + id).trigger('pause');
-    }, 1000);
+    }, 2000);
 }

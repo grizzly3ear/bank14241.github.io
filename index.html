@@ -8,20 +8,23 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+
 </head>
 <body class="container-fluid">
     <h2 class="text-center">GEN 241</h2>
     <div class="row">
-        <div class="col-md-offset-2 col-md-4">
+        <div class="col-md-offset-2 col-md-3">
             <input type="text" placeholder="1 2 3 ..." id="audioInput">
             <button class="btn btn-default" onclick="playAudio('play')">Play!</button>
-            <button class="btn btn-danger" onclick="playAudio('stop')">STOP ALL!</button>
+            
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
             <input type="text" placeholder="1 2 3 ..." id="audioStopInput">
             <button class="btn btn-danger" onclick="stopCustom()">STOP!</button>
+            <button class="btn btn-danger" onclick="playAudio('stopAll')">STOP ALL!</button>
         </div>
     </div>
+    <br>
     <div id="content">
 
     </div>
