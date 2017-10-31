@@ -4,12 +4,15 @@ $(document).ready(function () {
     for (var index = 0; index < list.length; index++) {
         $('#content').append('  <div class="row">'+
                                     '<div class="col-md-offset-2 col-md-1">'+
-                                        '<span>' + (index+1) + '. ' + list[index] + '</span></div><div class="col-md-3">'+
+                                        '<span>' + (index+1) + '. ' + list[index] + '</span>'+
+                                    '</div>'+
+                                    '<div class="col-md-3">'+
                                         '<audio controls id="audio' + (index+1) + '">'+
                                             '<source src="audio/' + (index+1) + '.mp3" type="audio/mpeg">'+
                                         '</audio>'+
                                     '</div>'+
-                                    '<div class="col-md-3">'+
+                                    '<div class="col-md-6">'+
+                                        '<input type="number" id="fadeId'+(index+1)+'" style="width: 15%" min="1" step="0.5">'+
                                         '<button class="btn btn-warning" onclick="fadeOut(' + (index+1) + ')">fade out</button>'+
                                     '</div>'+
                                 '</div>'+
@@ -46,8 +49,10 @@ function stopCustom() {
 }
 
 function fadeOut(id) {
-    $('#audio' + id).animate({ volume: 0 }, 2000);
+    let sec = $('#fadeId'+id).val() +0;
+    let fade = sec*100;
+    $('#audio' + id).animate({ volume: 0 }, fade);
     setTimeout(function () {
         $('#audio' + id).trigger('pause');
-    }, 2000);
+    }, fade);
 }
